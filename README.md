@@ -1,5 +1,13 @@
 # AI powered typing assistant with Ollama
 
+A script that can run in the background and listen to hotkeys, then uses a Large Language Model to fix the text.
+
+Inspired by this tweet:
+
+https://twitter.com/karpathy/status/1725553780878647482
+
+> "GPT is surprisingly good at correcting minor typos, so you can write really really fast, ignore mistakes and keep going, and it comes out just fine." - Andrej Karpathy
+
 ## Get Started
 
 ### 1. Set up Ollama
