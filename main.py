@@ -34,6 +34,7 @@ def fix_text(text):
         timeout=10,
     )
     if response.status_code != 200:
+        print("Error", response.status_code)
         return None
     return response.json()["response"].strip()
 
@@ -52,20 +53,26 @@ def fix_current_line():
 
 
 def fix_selection():
-    # 1. copy to clipboard
+    # 1. Copy selection to clipboard
     with controller.pressed(Key.cmd):
         controller.tap("c")
-    # 2. get the text from clipboard
+
+    # 2. Get the clipboard string
     time.sleep(0.1)
     text = pyperclip.paste()
 
-    # 3. fix the text
+    # 3. Fix string
+    if not text:
+        return
     fixed_text = fix_text(text)
+    if not fixed_text:
+        return
 
-    # 4. copy back to clipboard
+    # 4. Paste the fixed string to the clipboard
     pyperclip.copy(fixed_text)
     time.sleep(0.1)
-    # 5. insert text
+
+    # 5. Paste the clipboard and replace the selected text
     with controller.pressed(Key.cmd):
         controller.tap("v")
 
