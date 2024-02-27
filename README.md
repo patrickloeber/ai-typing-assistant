@@ -1,6 +1,6 @@
 # AI powered typing assistant with Ollama
 
-A script that can run in the background and listen to hotkeys, then uses a Large Language Model to fix the text.
+A script that can run in the background and listen to hotkeys, then uses a Large Language Model to fix the text. Less than 100 lines of code.
 
 Inspired by this tweet:
 
@@ -35,15 +35,16 @@ Start the assistant:
 python main.py
 ```
 
-Hotkeys:
+Hotkeys you can then press:
 
 - F9: Fixes the current line (without having to select the text)
 - F10: Fixes the current selection
 
+**Note**: The code works on macOS. The underlying shortcuts in the code like Cmd+Shift+Left, Cmd+C, Cmd+V might have to be changed for Linux & Windows (e.g. `Key.cmd` -> `Key.ctrl`).
 
 ## Customize
 
-Hotkeys, prompt, and Ollama config can be easily customized in the code.
+Hotkeys, prompt, and Ollama config can be easily customized and extended in the code.
 
 For example, here are some prompt templates you can try:
 

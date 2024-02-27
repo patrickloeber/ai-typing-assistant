@@ -1,9 +1,10 @@
+import time
+from string import Template
+
+import httpx
 from pynput import keyboard
 from pynput.keyboard import Key, Controller
 import pyperclip
-import time
-import httpx
-from string import Template
 
 
 controller = Controller()
@@ -40,7 +41,7 @@ def fix_text(text):
 
 
 def fix_current_line():
-    # Cmd + Shift + Left
+    # macOS short cut to select current line: Cmd+Shift+Left
     controller.press(Key.cmd)
     controller.press(Key.shift)
     controller.press(Key.left)
