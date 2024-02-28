@@ -40,6 +40,8 @@ Hotkeys you can then press:
 - F9: Fixes the current line (without having to select the text)
 - F10: Fixes the current selection
 
+**Note**: You may get an error the first time saying `This process is not trusted! Input event monitoring will not be possible until it is added to accessibility clients`. On Mac, you need to add the script (IDE/terminal) both on accessibility and input monitoring.
+
 **Note**: The code works on macOS. The underlying shortcuts in the code like Cmd+Shift+Left, Cmd+C, Cmd+V might have to be changed for Linux & Windows (e.g. `Key.cmd` -> `Key.ctrl`).
 
 ## Customize
