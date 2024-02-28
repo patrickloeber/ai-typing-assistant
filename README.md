@@ -8,6 +8,10 @@ https://twitter.com/karpathy/status/1725553780878647482
 
 > "GPT is surprisingly good at correcting minor typos, so you can write really really fast, ignore mistakes and keep going, and it comes out just fine." - Andrej Karpathy
 
+You'll find a demo and step-by-step code explanations on my YouTube channel:
+
+ [![Alt text](https://img.youtube.com/vi/IUTFrexghsQ/hqdefault.jpg)](https://youtu.be/IUTFrexghsQ)
+
 ## Get Started
 
 ### 1. Set up Ollama
