@@ -23,6 +23,7 @@ Run `ollama run mistral:7b-instruct-v0.2-q4_K_S`
 Mistal 7B Instruct works well for this task, but feel free to try other models, too :)
 
 ### 2. Install dependencies
+This application requires Python 3.11 or lower version. 3.12 isn't supported as no compatible *pynput* package release is available for this Python version.  
 ```
 pip install pynput pyperclip httpx
 ```
