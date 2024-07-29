@@ -1,0 +1,58 @@
+from pynput import keyboard
+import time
+from pynput.keyboard import Key, Controller
+import pyperclip
+
+from llm_caller import fix_text
+
+controller = Controller()
+
+
+def fix_current_line():
+    # macOS short cut to select current line: Cmd+Shift+Left
+    controller.press(Key.cmd)
+    controller.press(Key.shift)
+    controller.press(Key.left)
+
+    controller.release(Key.cmd)
+    controller.release(Key.shift)
+    controller.release(Key.left)
+
+    fix_selection()
+
+
+def fix_selection():
+    # 1. Copy selection to clipboard
+    with controller.pressed(Key.cmd):
+        controller.tap("c")
+
+    # 2. Get the clipboard string
+    time.sleep(0.1)
+    text = pyperclip.paste()
+
+    # 3. Fix string
+    if not text:
+        return
+    fixed_text = fix_text(text)
+    if not fixed_text:
+        return
+
+    # 4. Paste the fixed string to the clipboard
+    pyperclip.copy(fixed_text)
+    time.sleep(0.1)
+
+    # 5. Paste the clipboard and replace the selected text
+    with controller.pressed(Key.cmd):
+        controller.tap("v")
+
+
+def on_f9():
+    fix_current_line()
+
+
+def on_f10():
+    fix_selection()
+
+
+with keyboard.GlobalHotKeys({"<101>": on_f9, "<109>": on_f10}) as h:
+    h.join()
